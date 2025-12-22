@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;600;700&display=swap');
+
+* {
+    font-family: 'Noto Sans Mono', monospace;
+}
+
+body {
+    background-color: #2f3338;
+    color: #d2ceb8;
+    font-size: 100%;
+    margin: 1;
+}
+@media screen and (min-width: 1200px) {
+  h1 {
+    font-size: 1.5vw;
+  }
+}
+
+@media screen and (max-width: 1200px) {
+  h1 {
+    font-size: 2.5vw;
+  }
+}
+
+.circle{
+    width:60vw;
+    height:60vw;
+    border-radius: 50%;
+    background-color: #777670;
+    margin:auto;
+}

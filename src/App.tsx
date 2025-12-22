@@ -1,8 +1,11 @@
+import './App.css'
+
 function App() {
-   return (
+  return (
     <>
-      <h1> Decision Wheel </h1>
-  </>
+      <h1> george wheel </h1>
+      <div className='circle'></div>
+    </>
   )
 }
 
