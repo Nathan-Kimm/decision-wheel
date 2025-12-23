@@ -1,0 +1,157 @@
+/* for larger screen (regular pc screen)*/
+@media screen and (min-width: 1200px) {
+    .wheel {
+        position: relative;
+        width: 37vw;
+        height: 37vw;
+        border-radius: 50%;
+        border: 10px solid #E3E4E4;
+        transition: transform 8s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+        transform-origin: 50% 50%;
+        overflow: hidden;
+        --slice-angle: calc(360deg / 11);
+    }
+
+    .wheel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: transparent;
+        pointer-events: none;
+    }
+
+    .wheel-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 80vh;
+        position: relative;
+    }
+
+    .wheel-mid-hide {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 2.5vw;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        background-color: #d5d6d6;
+        z-index: 3;
+        pointer-events: none;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .wheel-label {
+        position: absolute;
+        top: 50%;
+        left: 16%;
+        transform-origin: 0 0;
+        color: #E7E7E7;
+        font-size: 1.5vw;
+        font-weight: 700;
+        white-space: nowrap;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        --label-radius: 50%;
+    }
+}
+
+/* for smaller screen (mobile screen)*/
+@media screen and (max-width: 1200px) {
+    .wheel {
+        position: relative;
+        width: 60vw;
+        height: 60vw;
+        border-radius: 50%;
+        border: 10px solid #E3E4E4;
+        transition: transform 8s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+        transform-origin: 50% 50%;
+        overflow: hidden;
+        --slice-angle: calc(360deg / 11);
+    }
+
+    .wheel::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        border-radius: 50%;
+        background: transparent;
+        pointer-events: none;
+    }
+
+    .wheel-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        min-height: 75vh;
+        position: relative;
+    }
+    .wheel-pointer {
+        position: absolute;
+        top: calc(30vw); /* wheel height is 60vw */
+        left: 50%;
+        transform: translateX(-50%) rotate(180deg);
+        width: 5vw;
+        height: 5vw;
+        background: #28282a;
+        clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
+        z-index: 4;
+        pointer-events: none;
+    }
+
+    .wheel-label {
+        position: absolute;
+        top: 50%;
+        left: 15%;
+        transform-origin: 0 0;
+        color: #E7E7E7;
+        font-size: 2vw;
+        font-weight: 700;
+        white-space: nowrap;
+        width: 70%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        pointer-events: none;
+        --label-radius: 50%;
+    }
+
+    .wheel-mid-hide {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+        width: 4vw;
+        aspect-ratio: 1 / 1;
+        border-radius: 50%;
+        background-color: #d5d6d6;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    /*in the works*/
+    .wheel-pointer {
+        position: absolute;
+        top: 2%;
+        left: 50%;
+        transform: translate(-50%, -50%) rotate(180deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1 / 1;
+        width: 5vw;
+        height: 5vw;
+        background: #28282a;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    }
+}
