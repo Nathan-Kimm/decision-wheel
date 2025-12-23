@@ -1,5 +1,6 @@
 import { useState } from "react";
 import "./Wheel.css";
+import "./button.css";
 
 type WheelProps = {
   options: string[];
@@ -64,7 +65,7 @@ export default function Wheel({ options, onSelect }: WheelProps) {
         <div className="wheel-mid-hide" />
       </div>
       <div className="wheel-pointer"></div>
-      <button className="button" onClick={spin}>
+      <button className="spin" onClick={spin}>
         spin
       </button>
     </div>
