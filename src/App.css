@@ -21,11 +21,3 @@ body {
     font-size: 2.5vw;
   }
 }
-
-.circle{
-    width:60vw;
-    height:60vw;
-    border-radius: 50%;
-    background-color: #777670;
-    margin:auto;
-}

@@ -1,0 +1,33 @@
+.wheel-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.wheel {
+    position: relative;
+    width: 45vw;
+    height: 45vw;
+    border-radius: 50%;
+    border: 6px solid #777670;
+    transition: transform 4s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+    overflow: hidden;
+}
+
+.slice {
+   position: absolute;
+    width: 50%;
+    height: 50%;
+    top: 0;
+    left: 50%;
+    transform-origin: 0% 100%;
+    clip-path: polygon(0 0, 100% 0, 0 100%);
+    border: 3px solid #777670;
+}
+
+.slice span {
+    position: absolute;
+    transform: rotate(90deg);
+    top: 50%;
+    
+}
