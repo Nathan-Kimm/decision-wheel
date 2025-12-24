@@ -3,7 +3,7 @@ import Wheel from "./components/Wheel";
 import './App.css'
 
 function App() {
-  const [ options, setOptions ] = useState ([
+  const [ options] = useState ([
     "tij",
     "matthew",
     "ben",
@@ -19,10 +19,12 @@ function App() {
 
   const [winner, setWinner] = useState<string | null>(null);
 
+  // H1 Winner is temp
   return (
     <>
       <h1> george wheel </h1>
       <Wheel options={options} onSelect={setWinner} />  
+      <h1>Winner: {winner ?? "-"}</h1>
     </>
   )
 }
