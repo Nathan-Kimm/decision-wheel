@@ -46,8 +46,8 @@ export default function Wheel({ options, onSelect }: WheelProps) {
         style={{
           transform: `rotate(${rotation}deg)`,
           background: gradient,
-          ["--slice-angle" as any]: `${sliceAngle}deg`,
-        }}
+          ["--slice-angle"]: `${sliceAngle}deg`,
+        } as React.CSSProperties}
       >
         {options.map((option, index) => {
           const endAngle = (index + 1) * sliceAngle;
