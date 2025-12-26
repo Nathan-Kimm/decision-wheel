@@ -13,8 +13,8 @@ export default function Wheel({ options, onSelect }: WheelProps) {
   const spin = () => {
     const winnerIndex = Math.floor(Math.random() * options.length);
     const sliceAngle = 360 / options.length;
-    const desiredAngle = (options.length - winnerIndex) * sliceAngle;
-    const baseSpins = 10; 
+    const desiredAngle = (winnerIndex * sliceAngle);
+    const baseSpins = 0; 
 
     setRotation((prev) => {
       const currentAngle = ((prev % 360) + 360) % 360; 
@@ -27,7 +27,10 @@ export default function Wheel({ options, onSelect }: WheelProps) {
     }, 4000);
   };
 
+  
   const sliceAngle = 360 / options.length;
+  // To start wheel with first option at top
+  const initialOffset = -90 - sliceAngle/2 + sliceAngle;
   const labelEdgeOffsetDeg = 20; // small margin from the sector edge
   const palette = ["#A7A7A7", "#98D2C6", "#ea8a9a"];
   const gradient = `conic-gradient(${options
@@ -39,12 +42,14 @@ export default function Wheel({ options, onSelect }: WheelProps) {
     })
     .join(", ")})`;
 
+  
+
   return (
     <div className="wheel-container">
       <div
         className="wheel"
         style={{
-          transform: `rotate(${rotation}deg)`,
+          transform: `rotate(${rotation + initialOffset}deg)`,
           background: gradient,
           ["--slice-angle"]: `${sliceAngle}deg`,
         } as React.CSSProperties}

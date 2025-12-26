@@ -19,12 +19,11 @@ function App() {
 
   const [winner, setWinner] = useState<string | null>(null);
 
-  // H1 Winner is temp
   return (
     <>
       <h1> george wheel </h1>
       <Wheel options={options} onSelect={setWinner} />  
-      <h1>Winner: {winner ?? "-"}</h1>
+      <h1>winner: {winner ?? "-"}</h1>
     </>
   )
 }
