@@ -14,7 +14,7 @@ export default function Wheel({ options, onSelect }: WheelProps) {
     const winnerIndex = Math.floor(Math.random() * options.length);
     const sliceAngle = 360 / options.length;
     const desiredAngle = (winnerIndex * sliceAngle);
-    const baseSpins = 0; 
+    const baseSpins = 10; 
 
     setRotation((prev) => {
       const currentAngle = ((prev % 360) + 360) % 360; 
@@ -24,7 +24,7 @@ export default function Wheel({ options, onSelect }: WheelProps) {
 
     setTimeout(() => {
       onSelect(options[winnerIndex]);
-    }, 4000);
+    }, 13500);
   };
 
   
@@ -45,34 +45,37 @@ export default function Wheel({ options, onSelect }: WheelProps) {
   
 
   return (
-    <div className="wheel-container">
-      <div
-        className="wheel"
-        style={{
-          transform: `rotate(${rotation + initialOffset}deg)`,
-          background: gradient,
-          ["--slice-angle"]: `${sliceAngle}deg`,
-        } as React.CSSProperties}
-      >
-        {options.map((option, index) => {
-          const endAngle = (index + 1) * sliceAngle;
-          const labelAngle = endAngle - labelEdgeOffsetDeg;
-          return (
-            <div
-              key={option}
-              className="wheel-label"
-              style={{ transform: `translateX(var(--label-radius, 95%)) rotate(${-labelAngle}deg)` }}
-            >
-              <span>{option}</span>
-            </div>
-          );
-        })}
-        <div className="wheel-mid-hide" />
+    <div className="wheel-overall-container">
+      <div className="wheel-container">
+        <div
+          className="wheel"
+          style={{
+            transform: `rotate(${rotation + initialOffset}deg)`,
+            background: gradient,
+            ["--slice-angle"]: `${sliceAngle}deg`,
+          } as React.CSSProperties}
+        >
+          {options.map((option, index) => {
+            const endAngle = (index + 1) * sliceAngle;
+            const labelAngle = endAngle - labelEdgeOffsetDeg;
+            return (
+              <div
+                key={option}
+                className="wheel-label"
+                style={{ transform: `translateX(var(--label-radius, 95%)) rotate(${-labelAngle}deg)` }}
+              >
+                <span>{option}</span>
+              </div>
+            );
+          })}
+          <div className="wheel-mid-hide" />
+        </div>
+        <div className="wheel-pointer"/>
+       
+        <button className="spin" onClick={spin}>
+          spin
+        </button>
       </div>
-      <div className="wheel-pointer"></div>
-      <button className="spin" onClick={spin}>
-        spin
-      </button>
     </div>
   );
 }

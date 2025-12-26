@@ -1,10 +1,17 @@
+.wheel-overall-container{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
 .wheel {
         position: relative;
         width: 37vw;
         height: 37vw;
         border-radius: 50%;
         border: 10px solid #E3E4E4;
-        transition: transform 8s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+        transition: transform 13s cubic-bezier(0.17, 0.67, 0.12, 0.99);
         transform-origin: 50% 50%;
         overflow: hidden;
         --slice-angle: calc(360deg / 11);
@@ -68,15 +75,15 @@
 
     .wheel-pointer {
         position: absolute;
-        top: 0;                    
-        left: 50vw;                  
-        transform: translate(-50%, -50%) rotate(180deg);
-        width: 3%;                 
+        top: 50%;                    
+        left: 50%;                  
+        transform: translate(-50%, -840%) rotate(180deg);
+        width: 7%;                 
         aspect-ratio: 1 / 1;
         background: #28282a;
         clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
         z-index: 4;
-        pointer-events: none;
+        pointer-events: none;   
     }
 }
 
@@ -88,7 +95,7 @@
         height: 60vw;
         border-radius: 50%;
         border: 10px solid #E3E4E4;
-        transition: transform 8s cubic-bezier(0.17, 0.67, 0.12, 0.99);
+        transition: transform 13s cubic-bezier(0.17, 0.67, 0.12, 0.99);
         transform-origin: 50% 50%;
         overflow: hidden;
         --slice-angle: calc(360deg / 11);
@@ -156,11 +163,11 @@
     }
 
     /*in the works*/
-    /* .wheel-pointer {
+    .wheel-pointer {
         position: absolute;
-        top: 2%;
+        top: 50%;
         left: 50%;
-        transform: translate(-50%, -50%) rotate(180deg);
+        transform: translate(-50%, -740%) rotate(180deg);
         display: flex;
         align-items: center;
         justify-content: center;
@@ -169,5 +176,5 @@
         height: 5vw;
         background: #28282a;
         clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-    } */
+    } 
 }

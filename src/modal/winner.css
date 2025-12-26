@@ -1,0 +1,28 @@
+.winner-container {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.modal {
+    display: flex;
+    flex-direction: column;
+    background: #ffffff;
+    padding: 1.5rem 2rem;
+    border-radius: 12px;
+    min-width: 300px;
+    max-width: 90vw;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.35);
+}
+
+.modal.large {
+    width: 800px;
+}
+
+.modal.small {
+    width: 300px;
+}
