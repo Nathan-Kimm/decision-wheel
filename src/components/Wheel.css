@@ -129,7 +129,7 @@
         clip-path: polygon(50% 100%, 0% 0%, 100% 0%);
         z-index: 4;
         pointer-events: none;
-    } 
+    }
 
     .wheel-label {
         position: absolute;
@@ -137,7 +137,7 @@
         left: 15%;
         transform-origin: 0 0;
         color: #E7E7E7;
-        font-size: 2vw;
+        font-size: 2.5vw;
         font-weight: 700;
         white-space: nowrap;
         width: 70%;
@@ -178,3 +178,20 @@
         clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
     } 
 }
+
+@media screen and (max-width: 650px) {
+        .wheel-pointer {
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -800%) rotate(180deg);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        aspect-ratio: 1 / 1;
+        width: 5vw;
+        height: 5vw;
+        background: #28282a;
+        clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+    } 
+    } 

@@ -9,8 +9,12 @@ type WheelProps = {
 
 export default function Wheel({ options, onSelect }: WheelProps) {
   const [rotation, setRotation] = useState(0);
+  const [isSpinning, setIsSpinning] = useState(false);
 
   const spin = () => {
+    if (isSpinning) return;
+    setIsSpinning(true);
+    
     const winnerIndex = Math.floor(Math.random() * options.length);
     const sliceAngle = 360 / options.length;
     const desiredAngle = (winnerIndex * sliceAngle);
@@ -24,6 +28,7 @@ export default function Wheel({ options, onSelect }: WheelProps) {
 
     setTimeout(() => {
       onSelect(options[winnerIndex]);
+      setIsSpinning(false);
     }, 13500);
   };
 
