@@ -11,18 +11,22 @@ export default function Wheel({ options, onSelect }: WheelProps) {
   const [rotation, setRotation] = useState(0);
   const [isSpinning, setIsSpinning] = useState(false);
 
+  const sliceAngle = 360 / options.length;
+  const initialOffset = -90 + sliceAngle / 2;
+  const labelEdgeOffsetDeg = 18; // small margin from the sector edge
+  const palette = ["#A7A7A7", "#98D2C6", "#ea8a9a"];
+
   const spin = () => {
     if (isSpinning) return;
     setIsSpinning(true);
-    
+
     const winnerIndex = Math.floor(Math.random() * options.length);
-    const sliceAngle = 360 / options.length;
-    const desiredAngle = (winnerIndex * sliceAngle);
-    const baseSpins = 10; 
+    const desiredAngle = (winnerIndex - 3) * sliceAngle + (Math.random() * sliceAngle);
+    const baseSpins = 10;
 
     setRotation((prev) => {
-      const currentAngle = ((prev % 360) + 360) % 360; 
-      const alignDelta = (desiredAngle - currentAngle + 360) % 360;
+      const currentAngle = ((prev % 360) + 360) % 360;
+      const alignDelta = (desiredAngle - (currentAngle + initialOffset) + 360) % 360;
       return prev + baseSpins * 360 + alignDelta;
     });
 
@@ -32,12 +36,6 @@ export default function Wheel({ options, onSelect }: WheelProps) {
     }, 13500);
   };
 
-  
-  const sliceAngle = 360 / options.length;
-  // To start wheel with first option at top
-  const initialOffset = -90 - sliceAngle/2 + sliceAngle;
-  const labelEdgeOffsetDeg = 20; // small margin from the sector edge
-  const palette = ["#A7A7A7", "#98D2C6", "#ea8a9a"];
   const gradient = `conic-gradient(${options
     .map((_, index) => {
       const start = (index * 100) / options.length;
@@ -47,7 +45,7 @@ export default function Wheel({ options, onSelect }: WheelProps) {
     })
     .join(", ")})`;
 
-  
+
 
   return (
     <div className="wheel-overall-container">
@@ -75,8 +73,8 @@ export default function Wheel({ options, onSelect }: WheelProps) {
           })}
           <div className="wheel-mid-hide" />
         </div>
-        <div className="wheel-pointer"/>
-       
+        <div className="wheel-pointer" />
+
         <button className="spin" onClick={spin}>
           spin
         </button>

@@ -1,15 +1,16 @@
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;600;700&display=swap');
 
 * {
-    font-family: 'Noto Sans Mono', monospace;
+  font-family: 'Noto Sans Mono', monospace;
 }
 
 body {
-    background-color: #d5d6d6;
-    color: #595959;
-    font-size: 100%;
-    margin-left: 1rem;
+  background-color: #d5d6d6;
+  color: #595959;
+  font-size: 100%;
+  margin-left: 1rem;
 }
+
 @media screen and (min-width: 1200px) {
   h1 {
     font-size: 1.5vw;
@@ -21,6 +22,7 @@ body {
     font-size: 2.5vw;
   }
 }
+
 @media screen and (max-width: 650px) {
   h1 {
     font-size: 3.5vw;

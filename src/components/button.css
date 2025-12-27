@@ -34,6 +34,24 @@
     }
 }
 
+@media screen and (max-width: 650px) {
+    .spin {
+        display: grid;
+        place-items: center;
+        position: relative;
+        margin-top: 3rem;
+        margin-left: auto;
+        margin-right: auto;
+        background-color: #e3e4e4;
+        border: none;
+        color: #8c8b8b;
+        font-size: 4vw;
+        font-weight: 700;
+        padding: 1.3vw 2.5vw;
+        border-radius: 10px;
+    }
+}
+
 
 .spin:hover {
     background-color: #c6c7c7;
