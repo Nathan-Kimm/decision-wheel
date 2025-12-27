@@ -9,10 +9,11 @@
 }
 
 .modal {
+    position: relative;
     display: flex;
     flex-direction: column;
-    background: #ffffff;
-    padding: 1.5rem 2rem;
+    background: #d5d6d6;
+    padding: 3rem 5rem;
     border-radius: 12px;
     min-width: 300px;
     max-width: 90vw;
@@ -26,3 +27,31 @@
 .modal.small {
     width: 300px;
 }
+
+.close-button {
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    background: transparent;
+    font-weight: 700;
+    border: none;
+    color: #28282a;
+    font-size: 1.7rem;
+    cursor: pointer;
+
+}
+
+.close-button:hover {
+    color: #ea8a9a;
+}
+
+.close-button:active{
+    color: #98D2C6;
+}
+
+.modal h1 {
+    margin: 0;
+    font-size: 2rem;
+    text-align: center;
+}
+
