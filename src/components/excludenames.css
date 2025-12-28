@@ -3,7 +3,7 @@
         margin-top: 2rem;
         padding: 1rem;
         text-align: center;
-        color: #28282a;
+        color: var(--color-dark);
         font-weight: 500;
     }
 
@@ -18,7 +18,7 @@
 
     .excluded-container h2 {
         margin: 0 0 1rem 0;
-        color: #595959;
+        color: var(--color-text);
         font-size: 1.5vw;
     }
 
@@ -30,8 +30,8 @@
     }
 
     .excluded-name-box {
-        background-color: #e3e4e4;
-        color: #595959;
+        background-color: var(--color-surface);
+        color: var(--color-text);
         padding: 0.9vw;
         border-radius: 15px;
         cursor: pointer;
@@ -45,7 +45,7 @@
     }
 
     .excluded-name-box:hover {
-        background-color: #d47a8a;
+        background-color: var(--color-accent-red);
     }
     .excluded-name-box.no-hover:hover {
         background-color: #e3e4e4;
@@ -62,7 +62,7 @@
         margin-top: 2rem;
         padding: 1rem;
         text-align: center;
-        color: #28282a;
+        color: var(--color-dark);
         font-weight: 500;
     }
 
@@ -79,7 +79,7 @@
 
     .excluded-container h2 {
         margin: 0 0 1rem 0;
-        color: #595959;
+        color: var(--color-text);
         font-size: 2.5vw;
     }
 
@@ -91,8 +91,8 @@
     }
 
     .excluded-name-box {
-        background-color: #e3e4e4;
-        color: #595959;
+        background-color: var(--color-surface);
+        color: var(--color-text);
         padding: 0.7rem;
         border-radius: 15px;
         cursor: pointer;
@@ -106,7 +106,7 @@
     }
 
     .excluded-name-box:hover {
-        background-color: #d47a8a;
+        background-color: var(--color-accent-red);
     }
 
     .excluded-name-box.no-hover:hover {
@@ -135,13 +135,13 @@
 
     .excluded-container h2 {
         margin: 0 0 1rem 0;
-        color: #595959;
+        color: var(--color-text);
         font-size: 3.5vw;
     }
 
     .excluded-name-box {
-        background-color: #e3e4e4;
-        color: #595959;
+        background-color: var(--color-surface);
+        color: var(--color-text);
         padding: 0.7rem;
         border-radius: 15px;
         cursor: pointer;
@@ -155,7 +155,7 @@
     }
 
     .excluded-name-box:hover {
-        background-color: #d47a8a;
+        background-color: var(--color-accent-red);
     }
 
     .excluded-name-box.no-hover:hover {

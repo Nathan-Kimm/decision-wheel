@@ -1,3 +1,4 @@
+@import "./colors.css";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+Mono:wght@400;600;700&display=swap');
 
 * {
@@ -6,8 +7,8 @@
 
 body {
   user-select: none;
-  background-color: #d5d6d6;
-  color: #595959;
+  background-color: var(--color-bg);
+  color: var(--color-text);
   font-size: 100%;
   margin-left: 1rem;
 }

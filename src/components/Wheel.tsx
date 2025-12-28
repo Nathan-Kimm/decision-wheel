@@ -13,11 +13,12 @@ export default function Wheel({ options, onSelect }: WheelProps) {
   const [isSpinning, setIsSpinning] = useState(false);
   const [selectedNames, setSelectedNames] = useState<string[]>([]);
 
+  //angle calculations
   const visibleOptions = options.filter((opt) => !selectedNames.includes(opt));
   const visibleSliceAngle = visibleOptions.length > 0 ? 360 / visibleOptions.length : 0;
   const sliceAngle = visibleSliceAngle;
   const initialOffset = -90 + sliceAngle / 2;
-  const labelEdgeOffsetDeg = sliceAngle / 2; 
+  const startAngle = -90;
   const palette = ["#A7A7A7", "#98D2C6", "#ea8a9a"];
 
   const spin = () => {
@@ -55,7 +56,7 @@ export default function Wheel({ options, onSelect }: WheelProps) {
       if (prev.includes(name)) {
         return prev.filter((n) => n !== name);
       } else {
-        // Don't allow excluding if only 1 person would remain
+        // Don't allow excluding if only 1 person remains
         if (visibleOptions.length <= 1) return prev;
         return [...prev, name];
       }
@@ -76,18 +77,19 @@ export default function Wheel({ options, onSelect }: WheelProps) {
           } as React.CSSProperties}
         >
           {visibleOptions.map((option, index) => {
-            const endAngle = (index + 1) * sliceAngle;
-            const labelAngle = endAngle - labelEdgeOffsetDeg;
+            const labelAngle =
+              startAngle + (index + 0.5) * sliceAngle;
+
             const canExclude = visibleOptions.length > 1 && !isSpinning;
             return (
               <div
                 key={option}
                 className="wheel-label"
-                style={{ transform: `translateX(var(--label-radius, 95%)) rotate(${-labelAngle}deg)` }}
+                style={{transform: `rotate(${labelAngle}deg) translateX(var(--label-radius, 95%)) rotate(${-labelAngle}deg)` }}
               >
-                <span 
+                <span
                   onClick={() => handleNameClick(option)}
-                  style={{ 
+                  style={{
                     cursor: canExclude ? "pointer" : "default",
                     pointerEvents: canExclude ? "auto" : "none"
                   }}
@@ -112,8 +114,8 @@ export default function Wheel({ options, onSelect }: WheelProps) {
           <h2>excluded</h2>
           <div className="excluded-names">
             {selectedNames.map((name) => (
-              <div 
-                key={name} 
+              <div
+                key={name}
                 className={`excluded-name-box ${isSpinning ? 'no-hover' : ''}`}
                 onClick={() => handleNameClick(name)}
                 style={{

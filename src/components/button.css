@@ -6,9 +6,9 @@
         margin-top: 3rem;
         margin-left: auto;
         margin-right: auto;
-        background-color: #e3e4e4;
+        background-color: var(--color-surface);
         border: none;
-        color: #8c8b8b;
+        color: var(--color-muted);
         font-size: 1.2vw;
         font-weight: 700;
         padding: 0.5vw 1.5vw;
@@ -24,9 +24,9 @@
         margin-top: 3rem;
         margin-left: auto;
         margin-right: auto;
-        background-color: #e3e4e4;
+        background-color: var(--color-surface);
         border: none;
-        color: #8c8b8b;
+        color: var(--color-muted);
         font-size: 2vw;
         font-weight: 700;
         padding: 1.1vw 1.1vh;
@@ -42,9 +42,9 @@
         margin-top: 3rem;
         margin-left: auto;
         margin-right: auto;
-        background-color: #e3e4e4;
+        background-color: var(--color-surface);
         border: none;
-        color: #8c8b8b;
+        color: var(--color-muted);
         font-size: 3.5vw;
         font-weight: 700;
         padding: 1.3vw 2.5vw;
@@ -54,10 +54,10 @@
 
 
 .spin:hover {
-    background-color: #c6c7c7;
+    background-color: var(--color-surface-hover);
     cursor: pointer;
 }
 
 .spin:active {
-    background-color: #a3d4c9;
+    background-color: var(--color-accent-teal);
 }
