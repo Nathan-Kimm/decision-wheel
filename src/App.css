@@ -5,6 +5,7 @@
 }
 
 body {
+  user-select: none;
   background-color: #d5d6d6;
   color: #595959;
   font-size: 100%;
@@ -25,6 +26,6 @@ body {
 
 @media screen and (max-width: 650px) {
   h1 {
-    font-size: 3.5vw;
+    font-size: 4.5vw;
   }
 }

@@ -1,8 +1,10 @@
 .wheel-overall-container {
+    user-select: none;
     width: 100%;
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: flex-start;
+    gap: 5rem; 
 }
 
 
@@ -26,7 +28,10 @@
         transition: transform 13s cubic-bezier(0.17, 0.67, 0.12, 0.99);
         transform-origin: 50% 50%;
         overflow: hidden;
-        --slice-angle: calc(360deg / 11);
+    }
+    .wheel-overall-container {
+        flex-direction: row; 
+        align-items: flex-start;
     }
 
     .wheel-container {
@@ -67,8 +72,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        pointer-events: none;
+        pointer-events: auto;
         --label-radius: 50%;
+    }
+
+    .wheel-label span:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        padding: 0.3rem 0.5rem;
+        transition: background-color 0.2s ease;
+    }
+
+    .wheel-label span.no-hover:hover {
+        background-color: transparent;
+        padding: 0;
     }
 
     .wheel-pointer {
@@ -96,7 +113,11 @@
         transition: transform 13s cubic-bezier(0.17, 0.67, 0.12, 0.99);
         transform-origin: 50% 50%;
         overflow: hidden;
-        --slice-angle: calc(360deg / 11);
+    }
+    .wheel-overall-container {
+        flex-direction: column;
+        align-items: center;
+        gap: 0px;
     }
 
 
@@ -136,8 +157,20 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        pointer-events: none;
+        pointer-events: auto; 
         --label-radius: 50%;
+    }
+
+    .wheel-label span:hover {
+        background-color: rgba(0, 0, 0, 0.3);
+        border-radius: 15px;
+        padding: 0.3rem 0.5rem;
+        transition: background-color 0.2s ease;
+    }
+
+    .wheel-label span.no-hover:hover {
+        background-color: transparent;
+        padding: 0;
     }
 
     .wheel-mid-hide {
@@ -181,7 +214,6 @@
         transition: transform 13s cubic-bezier(0.17, 0.67, 0.12, 0.99);
         transform-origin: 50% 50%;
         overflow: hidden;
-        --slice-angle: calc(360deg / 11);
     }
 
     .wheel-label {
@@ -197,7 +229,7 @@
         display: flex;
         justify-content: center;
         align-items: center;
-        pointer-events: none;
+        pointer-events: auto;
         --label-radius: 50%;
     }
 
