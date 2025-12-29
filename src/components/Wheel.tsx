@@ -16,7 +16,6 @@ export default function Wheel({ options, onSelect }: WheelProps) {
   const visibleOptions = options.filter((opt) => !selectedNames.includes(opt));
   const visibleSliceAngle = visibleOptions.length > 0 ? 360 / visibleOptions.length : 0;
   const sliceAngle = visibleSliceAngle;
-  const initialOffset = -90 + sliceAngle / 2;
   const labelEdgeOffsetDeg = sliceAngle / 2; 
   const palette = ["#A7A7A7", "#98D2C6", "#ea8a9a"];
 
@@ -29,8 +28,6 @@ export default function Wheel({ options, onSelect }: WheelProps) {
     console.log(winnerIndex);
 
     setRotation((prev) => {
-      console.log(prev);
-      console.log(desiredAngle);
       return (360 - (prev%360)) + baseSpins * 360 + desiredAngle + prev;
     });
 
@@ -70,7 +67,7 @@ export default function Wheel({ options, onSelect }: WheelProps) {
         <div
           className="wheel"
           style={{
-            transform: `rotate(${rotation + initialOffset}deg)`,
+            transform: `rotate(${rotation - 90}deg)`,
             background: gradient,
             ["--slice-angle"]: `${visibleSliceAngle}deg`,
           } as React.CSSProperties}
