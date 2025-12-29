@@ -23,15 +23,15 @@ export default function Wheel({ options, onSelect }: WheelProps) {
   const spin = () => {
     if (isSpinning) return;
     setIsSpinning(true);
-
     const winnerIndex = Math.floor(Math.random() * visibleOptions.length);
-    const desiredAngle = (winnerIndex - 3) * sliceAngle + (Math.random() * sliceAngle);
+    const desiredAngle = winnerIndex * sliceAngle + (Math.random() * (sliceAngle/4));
     const baseSpins = 10;
+    console.log(winnerIndex);
 
     setRotation((prev) => {
-      const currentAngle = ((prev % 360) + 360) % 360;
-      const alignDelta = (desiredAngle - (currentAngle + initialOffset) + 360) % 360;
-      return prev + baseSpins * 360 + alignDelta;
+      console.log(prev);
+      console.log(desiredAngle);
+      return (360 - (prev%360)) + baseSpins * 360 + desiredAngle + prev;
     });
 
     setTimeout(() => {
